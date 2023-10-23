@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".ui.activity.PlansActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/subscribe"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:id="@+id/swipe">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plansList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_current_plan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:text="Your SubScribed Package"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24"
+                tools:ignore="HardcodedText"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/discountTimerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/dp_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/counter_bg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                           android:layout_margin="@dimen/dp_5">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/dp_10">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/counter_num"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/counter_days"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dp_25"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Days"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/dp_10">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/counter_num"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/counter_hours"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dp_25"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hours"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_margin="@dimen/dp_10"
+                                android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/counter_num"
+                                android:gravity="center">
+                                <TextView
+                                    android:id="@+id/counter_minute"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dp_25"
+                                    android:textStyle="bold"  />
+                            </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Minutes"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_margin="@dimen/dp_10"
+                                android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/counter_num"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/counter_sec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dp_25"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Seconds"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textColor="@color/white" />
+                        </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_5"
+                    android:text="Your Discounted Plan"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_24"
+                    tools:ignore="HardcodedText"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/dp_5"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/leftandrightborder"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/leftbgcornerborder"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp_5"
+                                android:text="Plans"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/discountback_border"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/dcPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_10"
+                                android:gravity="center"
+                                android:text="Discount"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/discountback_border"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+
+                                android:gravity="center"
+                                android:text="Discounted Price"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rightbgborder"
+                            android:gravity="center">
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/discount_Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_25"
+                android:paddingBottom="@dimen/dp_25">
+
+                <RelativeLayout
+                    android:id="@+id/rl_subscription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:background="@drawable/ic_subscribe01">
+
+                    <TextView
+                        android:id="@+id/current_plan_name"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_subscription"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:layout_marginTop="@dimen/dp_5"
+
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        tools:text="Introductory djk" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_subscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_months"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/current_plan_months"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_40"
+                                    android:textStyle="bold"
+                                    tools:text="12" />
+
+                                <TextView
+                                    android:id="@+id/current_plan_text_months"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-8dp"
+                                    android:gravity="center"
+                                    android:text="@string/months"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_14"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_Amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_marginEnd="@dimen/dp_40"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/current_plan_original_amount_rupee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/currency"
+                                    android:textColor="@color/light_gray"
+                                    android:textSize="@dimen/sp_20"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/current_plan_original_amount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/light_gray"
+                                    android:textSize="@dimen/sp_20"
+                                    android:textStyle="bold"
+                                    tools:text="19800" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_plan_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp"
+                                android:layout_marginEnd="@dimen/dp_30"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/current_plan_amount_rupee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/currency"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_30"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/current_plan_amount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_60"
+                                    android:textStyle="bold"
+                                    tools:text="198" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_subscription"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:background="@color/colorPrimaryHeaderSecond"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_5">
+
+                    <TextView
+                        android:id="@+id/current_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_3"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_11"
+                        tools:text="@string/months" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unlimited access to All Content (No Auto-Renew)"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_11" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_80"
+                android:background="@drawable/information_bg"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_2"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradientbackground_subbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_2"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/txt_current_plan_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User ID"
+                            android:textAllCaps="true"
+                            android:textColor="#333"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/current_plan_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:lines="3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="Basic" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_2"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradientbackground_subbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_5"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+
+                        <TextView
+                            android:id="@+id/txt_current_plan_order_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:text="Order ID"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16"
+                            tools:ignore="HardcodedText" />
+
+
+                        <TextView
+                            android:id="@+id/current_plan_order_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_weight="1.3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="Basic" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_2"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradientbackground_subbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_5"
+                        android:weightSum="1">
+
+
+                        <TextView
+                            android:id="@+id/txt_current_plan_expiry_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Expiry Date"
+                            android:textAllCaps="true"
+                            android:textColor="#333"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/current_plan_expiry_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:lines="3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="Basic" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_2"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradientbackground_subbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_5"
+                        android:visibility="visible"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/txt_current_plan_trans_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transactionid"
+                            android:textAllCaps="true"
+                            android:textColor="#333"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/current_plan_trans_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:lines="3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="Basic" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/noResultLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_plans_avaliable"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/sp_18"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:drawableTopCompat="@drawable/ic_no_video" />
+
+    <Button
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_blue"
+        android:layout_gravity="bottom"
+        android:text="@string/pay"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp_20"
+        android:visibility="gone"/>
+</FrameLayout>

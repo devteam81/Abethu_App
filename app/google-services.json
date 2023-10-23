@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "323091654423",
+    "project_id": "abethu-3ef62",
+    "storage_bucket": "abethu-3ef62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323091654423:android:d289489a9f5843d0433952",
+        "android_client_info": {
+          "package_name": "com.abethu.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323091654423-7rrccrcocqle358k12aorh1qkaf4l8ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abethu.app",
+            "certificate_hash": "02d0978a5bfcb236b71ca56c3ff13f34459b16fa"
+          }
+        },
+        {
+          "client_id": "323091654423-or8p22q2pu0tb59l6tsd3cokl7na5aan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC86qeUwmOFCSTNeG53XsJXoxEntsbxJ2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323091654423-or8p22q2pu0tb59l6tsd3cokl7na5aan.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

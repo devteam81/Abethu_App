@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#15222B</color>
+    <color name="colorPrimaryLight">#4C97C4</color>
+    <color name="colorPrimaryHeader">#2A4B6C</color>
+    <color name="colorPrimaryHeaderSecond">#1C3144</color>
+    <color name="colorPrimaryDark">#091018</color>
+    <color name="colorPrimaryDarkFooter">#15222B</color>
+    <color name="icon_color">#D14A8A</color>
+    <color name="colorAccent">#2A4B6C</color>
+    <color name="colorAccentTransparent">#802A4B6C</color>
+    <color name="textHeadingColor">#B3BCC7</color>
+
+    <color name="seasonColor">#17212D</color>
+    <color name="seasonColor2">#111822</color>
+    <color name="offlineVideoColor">#101823</color>
+
+    <color name="editTextColor">#D6D6D6</color>
+    <color name="editTextHintColor">#FFFFFF</color>
+    <color name="textColor">#9E9E9E</color>
+    <color name="buttonColor">#677382</color>
+    <color name="pink">#ED008C</color>
+    <!--<color name="select_theme_yellow">#401FBAA9</color>-->
+    <color name="tick">#41AD49</color>
+
+    <color name="line_color">#6E3635</color>
+
+    <color name="cross">#F05D40</color>
+
+    <color name="yellow_trans">#50F5E376</color>
+    <color name="yellow">#F5E376</color>
+    <color name="video_page_trans">#50D3634E</color>
+    <color name="video_page">#D3634E</color>
+
+    <!--Pass code colors-->
+    <color name="button_color">#AE8F60</color>
+
+    <!--Google text color-->
+    <color name="blue_color">#5D8BF2</color>
+
+    <!--Search bar activeProfile activity-->
+    <!--Colors-->
+    <color name="light_gray">#dbdbdb</color>
+    <color name="gray">#7e7e7e</color>
+    <color name="dark_gray">#696969</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="transparentblack">#66000000</color>
+    <color name="transparentwhite">#50ffffff</color>
+
+    <!--Design colors-->
+    <color name="no_internet_bg">#893124</color>
+
+    <!--Old-->
+    <!--<color name="Grey_400">#cfcfcf</color>-->
+    <color name="green">#228B22</color>
+    <color name="transparentgreen">#8000FF00</color>
+    <color name="light_green">#24BA22</color>
+
+    <!--custom color-->
+    <color name="red">#FF0000</color>
+    <color name="red_transparent">#70FF0000</color>
+
+    <color name="download_bg1">#101823</color>
+    <color name="download_bg2">@android:color/transparent</color>
+
+    <color name="season_bg1">#17202D</color>
+    <color name="season_bg2">#111822</color>
+
+    <color name="cardBackground">#444444</color>
+    <color name="grey">#636366</color>
+    <color name="grey_1">#3a3a3c</color>
+    <color name="theme_blue">#1E78C4</color>
+    <color name="theme_yellow">#1E78C4</color>
+    <color name="theme_yellow_trans">#801E78C4</color>
+    <color name="select_payment_bg">#601E78C4</color>
+
+
+    <!-- Giraffee Player -->
+    <color name="Grey_400">#BDBDBD</color>
+    <color name="Grey_500">#9E9E9E</color>
+    <color name="Grey_600">#757575</color>
+    <color name="Grey_700">#616161</color>
+
+    <color name="silver">#353935</color>
+
+</resources>

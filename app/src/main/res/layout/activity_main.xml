@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/networkStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/no_internet_bg"
+        android:gravity="center"
+        android:padding="@dimen/dp_3"
+        android:text="@string/no_internet"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlBottomNavigationBarContainer"
+        android:layout_below="@id/networkStatusBar"
+        />
+
+
+        <LinearLayout
+            android:id="@+id/rlBottomNavigationBarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimaryDarkFooter"
+            android:weightSum="5"
+            android:baselineAligned="false">
+
+
+            <RelativeLayout
+                android:id="@+id/llHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="0.9">
+
+
+                <ImageView
+                    android:id="@+id/ivHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_ns"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"/>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvHome"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:background="@drawable/bg_nav_selected"-->
+<!--                    android:drawablePadding="2dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:paddingStart="@dimen/dp_10"-->
+<!--                    android:paddingTop="@dimen/dp_5"-->
+<!--                    android:paddingEnd="@dimen/dp_10"-->
+<!--                    android:paddingBottom="@dimen/dp_5"-->
+<!--                    android:text="@string/home"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/sp_12"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:drawableStartCompat="@drawable/ic_home" />-->
+                <TextView
+                    android:id="@+id/tvHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/sp_12"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    app:drawableTopCompat="@drawable/ic_home"
+                    app:drawableBottomCompat="@drawable/ic_home_selector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="0.9">
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_ns"
+                    android:layout_centerInParent="true"/>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvSearch"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/search"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="@dimen/sp_12"-->
+<!--                    android:paddingStart="@dimen/dp_10"-->
+<!--                    android:paddingEnd="@dimen/dp_10"-->
+<!--                    android:paddingTop="@dimen/dp_5"-->
+<!--                    android:paddingBottom="@dimen/dp_5"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:background="@drawable/bg_nav_selected"-->
+<!--                    android:drawablePadding="2dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:drawableStartCompat="@drawable/ic_search" />-->
+                <TextView
+                    android:id="@+id/tvSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/sp_12"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    android:visibility="gone"
+                    app:drawableTopCompat="@drawable/ic_search"
+                    app:drawableBottomCompat="@drawable/ic_search_selector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llYourVideos"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1.2">
+
+                <ImageView
+                    android:id="@+id/ivDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_your_video_ns" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvYourVideos"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/your_videos"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="@dimen/sp_12"-->
+<!--                    android:paddingStart="@dimen/dp_10"-->
+<!--                    android:paddingEnd="@dimen/dp_10"-->
+<!--                    android:paddingTop="@dimen/dp_5"-->
+<!--                    android:paddingBottom="@dimen/dp_5"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:background="@drawable/bg_nav_selected"-->
+<!--                    android:drawablePadding="2dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:drawableStartCompat="@drawable/ic_your_video" />-->
+                <TextView
+                    android:id="@+id/tvYourVideos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_videos"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/sp_12"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    android:visibility="gone"
+                    app:drawableTopCompat="@drawable/ic_your_video"
+                    app:drawableBottomCompat="@drawable/ic_search_selector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llComingSoon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="0.9">
+
+                <ImageView
+                    android:id="@+id/ivComingSoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/comingsoon_theme_icon" />
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvComingSoon"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/search"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="@dimen/sp_12"-->
+<!--                    android:paddingStart="@dimen/dp_10"-->
+<!--                    android:paddingEnd="@dimen/dp_10"-->
+<!--                    android:paddingTop="@dimen/dp_5"-->
+<!--                    android:paddingBottom="@dimen/dp_5"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:background="@drawable/bg_nav_selected"-->
+<!--                    android:drawablePadding="2dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:drawableStartCompat="@drawable/ic_search" />-->
+                <TextView
+                    android:id="@+id/tvComingSoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Soon"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/sp_12"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    android:visibility="gone"
+                    app:drawableTopCompat="@drawable/comingsoon_theme_icon"
+                    app:drawableBottomCompat="@drawable/ic_search_selector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llProfile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_home_ns"
+                    android:layout_centerInParent="true"/>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvProfile"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/settings"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="@dimen/sp_12"-->
+<!--                    android:paddingStart="@dimen/dp_10"-->
+<!--                    android:paddingEnd="@dimen/dp_10"-->
+<!--                    android:paddingTop="@dimen/dp_5"-->
+<!--                    android:paddingBottom="@dimen/dp_5"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:background="@drawable/bg_nav_selected"-->
+<!--                    android:drawablePadding="2dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:drawableStartCompat="@drawable/ic_profile_home" />-->
+                <TextView
+                    android:id="@+id/tvProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/sp_12"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    android:visibility="gone"
+                    app:drawableTopCompat="@drawable/ic_profile_home"
+                    app:drawableBottomCompat="@drawable/ic_search_selector" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+</RelativeLayout>
+

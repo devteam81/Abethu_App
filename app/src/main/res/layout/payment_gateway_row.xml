@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_gateway_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/paytm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        android:background="@drawable/bg_nav_selected"
+        android:backgroundTint="@color/colorPrimaryHeader"
+        android:padding="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"/>
+
+</RelativeLayout>

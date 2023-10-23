@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_25">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/bg_registeration_2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/userPicture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border="false" />
+
+            <!--<androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/transparentblack"
+                card_view:cardBackgroundColor="@color/transparentblack"
+                card_view:cardCornerRadius="50dp" >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@null"/>
+
+            </androidx.cardview.widget.CardView>-->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit_details"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:weightSum="3"
+            android:background="@drawable/bg_edittext"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginEnd="@dimen/dp_3"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_25">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:paddingStart="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:text="@string/full_name"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="@string/full_name"
+                android:digits="@string/digits"
+                android:maxLines="2"
+                android:maxLength="50"
+                android:lineSpacingExtra="-5sp"
+                android:paddingStart="@dimen/dp_30"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:background="@null"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:weightSum="3"
+            android:background="@drawable/bg_edittext"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginEnd="@dimen/dp_3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:paddingStart="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:text="@string/email"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_email"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="@string/email"
+                android:lineSpacingExtra="-5sp"
+                android:inputType="none"
+                android:paddingStart="@dimen/dp_30"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/dark_gray"
+                android:background="@null"
+                tools:ignore="RtlSymmetry"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:weightSum="3"
+            android:background="@drawable/bg_edittext"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginEnd="@dimen/dp_3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:paddingStart="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:text="@string/mobileNo"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="@string/mobileNo"
+                android:inputType="none"
+                android:maxLength="16"
+                android:paddingStart="@dimen/dp_30"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/dark_gray"
+                android:background="@null"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_25"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_40"
+            android:paddingEnd="@dimen/dp_40"
+            android:background="@drawable/bg_button"
+            android:layout_gravity="center"
+            android:text="@string/save_profile"
+            android:textSize="@dimen/sp_20"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_50"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingStart="@dimen/dp_30"
+        android:paddingEnd="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:text="@string/change_password"
+        android:textSize="@dimen/sp_18"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/social_login_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        tools:text="You have registered using your GOOGLE Social Account, you can't set or change password for social accounts."
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/theme_yellow"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        android:visibility="visible"/>
+
+</LinearLayout>

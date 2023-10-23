@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_registeration">
+
+            <!--<ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ll_payment_fail"
+                android:src="@drawable/payment_bg"/>-->
+
+
+            <LinearLayout
+                android:id="@+id/ll_payment_fail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_25"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dp_10"
+                    android:background="@drawable/payment_success">
+
+                    <!--<ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_5"
+                        android:src="@drawable/payment_success"/>-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_fail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_20"
+                        android:layout_margin="@dimen/dp_10"
+                        android:gravity="center"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/payment_success_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:textColor="@color/white"
+                            android:text="@string/payment_success"
+                            android:textSize="@dimen/sp_24"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_30"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/payment_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:lineHeight="@dimen/dp_20"
+                        android:textColor="@color/white"
+                        android:text="Your payment of 1234 was successful. \n We have sent a receipt of this transaction to your phone number"
+                        android:textSize="@dimen/sp_14"
+                        android:gravity="center"/>
+
+                    <Button
+                        android:id="@+id/submit_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_30"
+                        android:paddingStart="@dimen/dp_40"
+                        android:paddingEnd="@dimen/dp_40"
+                        android:background="@drawable/bg_button"
+                        android:text="@string/Continue"
+                        android:textSize="@dimen/sp_18"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+                <!--<TextView
+                    android:id="@+id/btnCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:gravity="center"
+                    android:background="@drawable/bg_button"
+                    android:padding="15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_10"/>-->
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+</LinearLayout>

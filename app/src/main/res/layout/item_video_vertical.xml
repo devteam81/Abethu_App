@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/videoTileRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:id="@+id/imgCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/videoTileImg"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:scaleType="fitXY"
+            android:background="@color/transparent"
+            android:src="@drawable/abethu_placeholder_vertical"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.SelectedCornerRadius" />
+
+        <!--<com.skydoves.elasticviews.ElasticImageView
+            android:id="@+id/videoTileImg"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:scaleType="fitXY"
+            tools:src="@tools:sample/backgrounds/scenic" />-->
+
+        <ImageView
+            android:id="@+id/imgRating"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/dp_5"
+            android:scaleType="fitXY"
+            android:src="@drawable/rating_a"
+            android:visibility="gone"/>
+
+        <!--<RelativeLayout
+            android:id="@+id/rlThumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/playVideoBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/play" />
+        </RelativeLayout>-->
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgCard"
+        android:layout_alignStart="@+id/imgCard"
+        android:layout_alignEnd="@+id/imgCard"
+        android:layout_marginTop="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:singleLine="true"
+        tools:text="Test"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        tools:ignore="MissingPrefix" />
+</RelativeLayout>
